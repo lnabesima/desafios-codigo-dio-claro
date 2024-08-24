@@ -9,14 +9,23 @@ public class VerificacaoComboCompleto {
         boolean bandaLargaContratada = false;
         boolean tvContratada = false;
 
-        // TODO: Itere sobre os serviços contratados
         for (String servico : servicosContratados) {
-            if(servico.equals("movel")) movelContratado = true;
-            if(servico.equals("bandaLarga")) bandaLargaContratada = true;
-            if(servico.equals("tv")) tvContratada = true;
+            switch (servico) {
+                case "movel":
+                    movelContratado = true;
+                    break;
+                case "banda larga":
+                    bandaLargaContratada = true;
+                    break;
+                case "tv":
+                    tvContratada = true;
+                    break;
+                default:
+                    System.out.println("Serviço inválido.");
+                    break;
+            }
         }
 
-        // TODO: Verifique se todos os serviços foram contratados
         if (movelContratado && bandaLargaContratada && tvContratada) {
             return "Combo Completo";
         } else {
