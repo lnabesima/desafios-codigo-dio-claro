@@ -16,8 +16,7 @@ public class VerificacaoServico {
         String nomeCliente = partes[0];
         boolean contratado = false;
 
-        // TODO: Verifique se o serviço está na lista de serviços contratados
-        contratado = Arrays.asList(partes).contains(servico);
+        contratado = Arrays.stream(partes).anyMatch(servico::equals);
 
         System.out.println(contratado ? "Sim" : "Nao");
 
