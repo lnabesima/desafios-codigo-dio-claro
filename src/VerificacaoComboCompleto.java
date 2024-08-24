@@ -11,10 +11,13 @@ public class VerificacaoComboCompleto {
 
         // TODO: Itere sobre os serviços contratados
         for (String servico : servicosContratados) {
+            if(servico.equals("movel")) movelContratado = true;
+            if(servico.equals("bandaLarga")) bandaLargaContratada = true;
+            if(servico.equals("tv")) tvContratada = true;
         }
 
         // TODO: Verifique se todos os serviços foram contratados
-        if () {
+        if (movelContratado && bandaLargaContratada && tvContratada) {
             return "Combo Completo";
         } else {
             return "Combo Incompleto";
